@@ -16,6 +16,8 @@ class _ChallengeState extends State<Challenge> {
 
   @override
   void dispose() {
+    focusNode.dispose();
+    focusKeyboard.dispose();
     controller.dispose();
     super.dispose();
   }
@@ -26,7 +28,7 @@ class _ChallengeState extends State<Challenge> {
       data: ThemeData.dark(),
       child: GestureDetector(
         onTap: () {
-          FocusScope.of(context).unfocus();
+          focusNode.unfocus();
         },
         child: Scaffold(
           appBar: AppBar(
@@ -35,6 +37,7 @@ class _ChallengeState extends State<Challenge> {
           body: RawKeyboardListener(
             focusNode: focusKeyboard,
             onKey: (key) {
+              // Elimina el chip cuando el input está vacío y cuando presiona el botón de borrar.
               if (controller.text.isEmpty &&
                   key is RawKeyDownEvent &&
                   key.data.logicalKey == LogicalKeyboardKey.backspace) {
@@ -123,7 +126,6 @@ class _ChallengeState extends State<Challenge> {
     );
   }
 }
-
 
 //// Funciona pero el TextField se situa abajo.
 // class Challenge extends StatefulWidget {
