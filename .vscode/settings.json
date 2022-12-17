@@ -1,0 +1,28 @@
+{
+    "search.exclude": {
+        "**/*.g.dart": true,
+        "**/*.freezed.dart": true,
+        "**/.fvm": true,
+        "lib/l10n/gen/*": true
+    },
+    "files.watcherExclude": {
+        "**/.fvm": true
+    },
+    "dart.flutterSdkPath": ".fvm/flutter_sdk",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": true
+    },
+    "files.defaultLanguage": "dart",
+    "dart.flutterSdkPaths": [
+        ".fvm/flutter_sdk"
+    ],
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/*.freezed.dart": true,
+        "**/*.g.dart": true,
+        "**/generated_plugin_registrant.dart": true,
+        "**/.flutter-plugins*": true,
+        "**/.packages": true,
+    }
+}
